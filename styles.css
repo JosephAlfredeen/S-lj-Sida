@@ -14,7 +14,7 @@ img{
     display: flex;
     align-items: center;
     justify-content: space-between;
-
+    position: fixed;
 
     background-color:#7D3D22;
     height: 100px;
@@ -101,6 +101,35 @@ img{
     cursor: pointer;
 }
 
+#dropDown{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: fixed;
+
+    margin-top: 100px;
+    width: 12%;
+    height: fit-content;
+    background-color: #7D3D22;
+    border-radius: 0 0 10px 10px;
+}
+
+.dropDownText{
+    display: flex;
+    flex-direction: column;
+}
+
+.dropDownRubrik{
+    font-weight: 500;
+    font-size: 25px;
+    text-decoration: underline;
+    margin-bottom: 5px;
+}
+
+#dropDownTextP{
+    margin-bottom: 8px;
+}
+
 .mainBack{
     display: flex;
     align-items: center;
@@ -147,6 +176,7 @@ img{
     padding: 2%;
     padding: 3px;
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
 }
 
 #pupularText{
@@ -165,7 +195,7 @@ img{
     justify-content: space-around;
     align-items: center;
 
-    padding-top: 15px;
+    padding-top: 30px;
     background-color: #D67622;
     height: fit-content;
     width: 80%;
@@ -176,9 +206,10 @@ img{
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 
     font-size: larger;
-    width: 33%;
+    cursor: pointer;
 }
 
 .footer{
@@ -198,7 +229,7 @@ img{
     flex-direction: column;
 }
 
-#footerRubrik{
+.footerRubrik{
     font-weight: 500;
     font-size: larger;
     text-decoration: underline;
