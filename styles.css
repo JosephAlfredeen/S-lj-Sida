@@ -33,6 +33,20 @@ img{
     cursor: pointer;
 }
 
+#bars{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 80px;
+    height: 80px;
+    border-radius: 50px;
+    background-color: #7D3D22;
+}
+#bars:hover{
+    background-color: black;
+}
+
 #logo{
     display: flex;
     align-items: center;
@@ -80,6 +94,9 @@ img{
 #shoppingCart{
     cursor: pointer;
 }
+#shoppingCart:hover{
+    color: black;
+}
 
 .logIn{
     display: flex;
@@ -99,6 +116,11 @@ img{
 
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
     cursor: pointer;
+}
+
+.logIn:hover{
+    background-color: black;
+    color: aliceblue;
 }
 
 #dropDown{
@@ -128,6 +150,10 @@ img{
 
 #dropDownTextP{
     margin-bottom: 8px;
+}
+#dropDownTextP:hover{
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 .mainBack{
@@ -178,6 +204,9 @@ img{
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
     cursor: pointer;
 }
+.mainButton:hover{
+    text-decoration: underline;
+}
 
 #pupularText{
     margin-top: 0.5%;
@@ -211,6 +240,9 @@ img{
     font-size: larger;
     cursor: pointer;
 }
+.imageTextContainer:hover{
+    text-decoration: underline;
+}
 
 .footer{
     display: flex;
@@ -240,4 +272,33 @@ img{
     flex-direction: column;
     gap: 10%;
     margin-top: 1%;
+}
+
+.productContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin:auto;
+
+    height: 800px;
+    width: 100%;
+    background-image: linear-gradient(to right, #7D3D22, #D67622 , #7D3D22);
+}
+
+.productInfoContainer{
+    display: flex;
+    justify-content: center;
+    gap: 5%;
+}
+
+.productName{
+    font-size: 50px;
+    margin: 0;
+}
+
+.productCost{
+    font-size: 60px;
+    color: red;
+    transform: rotate(15deg);
 }
