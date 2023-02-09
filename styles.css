@@ -1,3 +1,7 @@
+html{
+    scroll-behavior: smooth;
+}
+
 body{
     margin: 0;
     color: aliceblue;
@@ -10,7 +14,11 @@ img{
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
 }
 
+
+
+
 .header{
+    z-index: 9999;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -93,34 +101,10 @@ img{
 
 #shoppingCart{
     cursor: pointer;
+    color: aliceblue;
 }
 #shoppingCart:hover{
     color: black;
-}
-
-.logIn{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-
-    height: 35px;
-    width: 100px;
-    background-color:aliceblue;
-    font-size: 25px;
-    border-radius: 50px;
-    text-transform: uppercase;
-    font-weight: 700;
-    color: #555555;
-    padding: 5px;
-
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-}
-
-.logIn:hover{
-    background-color: black;
-    color: aliceblue;
 }
 
 #dropDown{
@@ -133,7 +117,7 @@ img{
     width: 12%;
     height: fit-content;
     background-color: #7D3D22;
-    border-radius: 0 0 10px 10px;
+    border-radius: 0 0 10px 0;
 }
 
 .dropDownText{
@@ -150,19 +134,28 @@ img{
 
 #dropDownTextP{
     margin-bottom: 8px;
+    color: aliceblue;
+    text-decoration: none;
 }
 #dropDownTextP:hover{
     text-decoration: underline;
+    text-decoration-color: aliceblue;
     cursor: pointer;
 }
+.dropDownText a:visited{
+    text-decoration: none;
+}
+
+
 
 .mainBack{
     display: flex;
-    align-items: center;
+    align-items: flex-end;
 
     background-color: #D67622;
     width: 100%;
-    height: 600px;
+    height: 450px;
+    padding-bottom: 100px;
 }
 
 .mainContainer{
@@ -172,13 +165,17 @@ img{
 
     width: 100%;
 }
+.mainContainer img{
+    max-width: 100%;
+}
 
 .imageDiv{
     background-color: white;
-    width: 30%;
+    max-width: 30%;
     height: 320px;
     border-radius: 5px;
 }
+
 
 .buttonContainer{
     display: flex;
@@ -195,20 +192,25 @@ img{
     align-items: center;
 
     background-color: #7D3D22;
+    color: aliceblue;
     font-size: 45px;
-    width: 100%;
     height: fit-content;
     border-radius: 5px;
     padding: 2%;
     padding: 3px;
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
     cursor: pointer;
+    text-decoration: none;
 }
 .mainButton:hover{
     text-decoration: underline;
+    color: aliceblue;
+}
+.mainButton a:visited{
+    text-decoration: none;
 }
 
-#pupularText{
+.pupularText{
     margin-top: 0.5%;
     text-align: center;
 
@@ -243,6 +245,9 @@ img{
 .imageTextContainer:hover{
     text-decoration: underline;
 }
+.imageTextContainer img{
+    max-width: 100%;
+}
 
 .footer{
     display: flex;
@@ -274,6 +279,10 @@ img{
     margin-top: 1%;
 }
 
+
+
+
+
 .productContainer{
     display: flex;
     justify-content: center;
@@ -290,6 +299,7 @@ img{
     display: flex;
     justify-content: center;
     gap: 5%;
+    width: 60%;
 }
 
 .productName{
@@ -297,8 +307,29 @@ img{
     margin: 0;
 }
 
+.prodcutTextContainer{
+    width: 80%;
+}
+
 .productCost{
     font-size: 60px;
     color: red;
     transform: rotate(15deg);
+    margin-top: 15%;
+    margin-bottom: 0;
+}
+
+.addToShoppingCart{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 5%;
+}
+
+#shoppingCartPlus{
+    cursor: pointer;
+    color: aliceblue;
+}
+#shoppingCartPlus:hover{
+    color: black;
 }

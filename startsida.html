@@ -27,7 +27,6 @@
 
         <div class="headerEndContainer">
         <i id="shoppingCart" class="fa-solid fa-cart-shopping fa-3x"></i>
-        <div class="logIn">Log In</div>
         </div>
 
     </div>
@@ -35,12 +34,12 @@
     <div id="dropDown" style="visibility: hidden;">
         <div class="dropDownText">
             <p class="dropDownRubrik">Produkter</p>
-            <p id="dropDownTextP">Nyheter</p>
-            <p id="dropDownTextP">Klassiker</p>
-            <p id="dropDownTextP">Sommar</p>
-            <p id="dropDownTextP">Tröjor</p>
-            <p id="dropDownTextP">Byxor</p>
-            <p id="dropDownTextP">Jackor</p>
+            <a id="dropDownTextP" href="startsida.html#popular"><p>Populärast</p></a>
+            <a id="dropDownTextP" href="startsida.html#nyheter"><p id="dropDownTextP">Nyheter</p></a>
+            <a id="dropDownTextP" href="startsida.html#sommar"><p id="dropDownTextP">Sommar</p></a>
+            <a id="dropDownTextP" href=""><p id="dropDownTextP">Tröjor</p></a>
+            <a id="dropDownTextP" href=""><p id="dropDownTextP">Byxor</p></a>
+            <a id="dropDownTextP" href=""><p id="dropDownTextP">Jackor</p></a>
         </div>
     </div>
 
@@ -48,15 +47,15 @@
         <div class="mainContainer">
             <a href=""><img src="images/webshoppMainLeft.jpg" alt="Image of a man"></a>
             <div class="buttonContainer">
-                <div class="mainButton">Nyheter</div>
-                <div class="mainButton">Klassiker</div>
-                <div class="mainButton">Sommar</div>
+                <a href="#popular" class="mainButton"><div >Populärast</div></a>
+                <a href="#nyheter" class="mainButton"><div >Nyheter</div></a>
+                <a href="#sommar" class="mainButton"><div >Sommar</div></a>
             </div>
             <a href=""><img src="images/webshoppMainRight.jpeg" alt="Image from Peaky Blinders"></a>
        </div>
     </div>
 
-    <p id="pupularText">Mest Populära Varor</p>
+    <p id="popular" class="pupularText">Mest Populära Varor</p>
 
     <div class="imageContainer">
         <div class="imageTextContainer">
@@ -64,26 +63,90 @@
             <p>Brown Cargo pants by Nordström</p>
         </div>
         <div class="imageTextContainer">
-            <img class="clothes" src="images/webshoppPinkPants.jpg" alt="Image Of pink Pants">
+            <a href="pinkCargoPants.html"><img class="clothes" src="images/webshoppPinkPants.jpg" alt="Image Of pink Pants"></a>
             <p>Pink Cargo pants by Nordström</p>
         </div>
         <div class="imageTextContainer">
-            <img class="clothes" src="images/webshoppLinenShirt.jpg" alt="Image Of a linen shirt">
+            <a href="linnenShirt.html"><img class="clothes" src="images/webshoppLinenShirt.jpg" alt="Image Of a linen shirt"></a>
             <p>Linnen Shirt by Roseborn</p>
         </div>
     </div>
 
     <div class="imageContainer">
         <div class="imageTextContainer">
-            <img class="clothes" src="images/webshoppBegieJacket.jpg" alt="Image Of a Begie Jacket Pants">
+            <a href="beigeJacket.html"><img class="clothes" src="images/webshoppBegieJacket.jpg" alt="Image Of a Begie Jacket Pants"></a>
             <p>Summer Jacket by H&M</p>
         </div>
         <div class="imageTextContainer">
-            <img class="clothes" src="images/webshoppDresshirt.jpeg" alt="Image Of a shirt">
+            <a href="dressShirt.html"><img class="clothes" src="images/webshoppDresshirt.jpeg" alt="Image Of a shirt"></a>
             <p>Dress Shirt by Gant</p>
         </div>
         <div class="imageTextContainer">
-            <img class="clothes" src="images/webshoppCollegeJacket.jpg" alt="Image Of a begie college jacket">
+            <a href=""><img class="clothes" src="images/webshoppCollegeJacket.jpg" alt="Image Of a begie college jacket"></a>
+            <p>College Jacket by Gant</p>
+        </div>
+    </div>
+
+    <p id="nyheter" class="pupularText">Nyheter</p>
+
+    <div class="imageContainer">
+        <div class="imageTextContainer">
+            <a href="brownCargoPants.html"><img class="clothes" src="images/webshoppBrownPants.jpg" alt="Image Of brown Pants"></a>
+            <p>Brown Cargo pants by Nordström</p>
+        </div>
+        <div class="imageTextContainer">
+            <a href="pinkCargoPants.html"><img class="clothes" src="images/webshoppPinkPants.jpg" alt="Image Of pink Pants"></a>
+            <p>Pink Cargo pants by Nordström</p>
+        </div>
+        <div class="imageTextContainer">
+            <a href="linnenShirt.html"><img class="clothes" src="images/webshoppLinenShirt.jpg" alt="Image Of a linen shirt"></a>
+            <p>Linnen Shirt by Roseborn</p>
+        </div>
+    </div>
+
+    <div class="imageContainer">
+        <div class="imageTextContainer">
+            <a href="beigeJacket.html"><img class="clothes" src="images/webshoppBegieJacket.jpg" alt="Image Of a Begie Jacket Pants"></a>
+            <p>Summer Jacket by H&M</p>
+        </div>
+        <div class="imageTextContainer">
+            <a href="dressShirt.html"><img class="clothes" src="images/webshoppDresshirt.jpeg" alt="Image Of a shirt"></a>
+            <p>Dress Shirt by Gant</p>
+        </div>
+        <div class="imageTextContainer">
+            <a href=""><img class="clothes" src="images/webshoppCollegeJacket.jpg" alt="Image Of a begie college jacket"></a>
+            <p>College Jacket by Gant</p>
+        </div>
+    </div>
+
+    <p id="sommar" class="pupularText">Sommar</p>
+
+    <div class="imageContainer">
+        <div class="imageTextContainer">
+            <a href="brownCargoPants.html"><img class="clothes" src="images/webshoppBrownPants.jpg" alt="Image Of brown Pants"></a>
+            <p>Brown Cargo pants by Nordström</p>
+        </div>
+        <div class="imageTextContainer">
+            <a href="pinkCargoPants.html"><img class="clothes" src="images/webshoppPinkPants.jpg" alt="Image Of pink Pants"></a>
+            <p>Pink Cargo pants by Nordström</p>
+        </div>
+        <div class="imageTextContainer">
+            <a href="linnenShirt.html"><img class="clothes" src="images/webshoppLinenShirt.jpg" alt="Image Of a linen shirt"></a>
+            <p>Linnen Shirt by Roseborn</p>
+        </div>
+    </div>
+
+    <div class="imageContainer">
+        <div class="imageTextContainer">
+            <a href="beigeJacket.html"><img class="clothes" src="images/webshoppBegieJacket.jpg" alt="Image Of a Begie Jacket Pants"></a>
+            <p>Summer Jacket by H&M</p>
+        </div>
+        <div class="imageTextContainer">
+            <a href="dressShirt.html"><img class="clothes" src="images/webshoppDresshirt.jpeg" alt="Image Of a shirt"></a>
+            <p>Dress Shirt by Gant</p>
+        </div>
+        <div class="imageTextContainer">
+            <a href=""><img class="clothes" src="images/webshoppCollegeJacket.jpg" alt="Image Of a begie college jacket"></a>
             <p>College Jacket by Gant</p>
         </div>
     </div>
