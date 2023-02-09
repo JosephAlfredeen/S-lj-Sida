@@ -201,6 +201,8 @@ img{
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
     cursor: pointer;
     text-decoration: none;
+
+    scroll-margin-top: 400px;
 }
 .mainButton:hover{
     text-decoration: underline;
@@ -209,6 +211,11 @@ img{
 .mainButton a:visited{
     text-decoration: none;
 }
+
+#popular, #nyheter, #sommar{
+    scroll-margin-top: 100px;
+}
+
 
 .pupularText{
     margin-top: 0.5%;
