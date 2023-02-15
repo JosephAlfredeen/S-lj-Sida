@@ -20,7 +20,6 @@ a:hover{
 
 
 
-
 .header{
     z-index: 9999;
     display: flex;
@@ -147,6 +146,7 @@ a:hover{
     align-items: center;
     flex-direction: column;
     position: fixed;
+    z-index: 9999;
 
     margin-top: 100px;
     width: 12%;
@@ -320,7 +320,6 @@ a:hover{
 
 
 
-
 .footer{
     display: flex;
     justify-content: space-around;
@@ -359,6 +358,7 @@ a:hover{
 .productContainer{
     display: flex;
     justify-content: center;
+    flex-direction: column;
 
     height: fit-content;
     padding: 200px 0 200px 0;
@@ -371,6 +371,8 @@ a:hover{
     justify-content: center;
     gap: 5%;
     width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
 }
 
 .productName{
@@ -406,6 +408,22 @@ a:hover{
     align-items: flex-end;
     gap: 5%;
 }
+
+#productDescription{
+    display: flex;
+    flex-wrap: wrap;
+
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+#productDescription h2{
+    padding-left: 10%;
+    text-decoration: underline;
+    margin: 50px 0 0 0;
+}
+
+
 .addToCart{
     display: flex;
     justify-content: center;
