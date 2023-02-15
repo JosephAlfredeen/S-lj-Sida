@@ -14,15 +14,12 @@
 
         <div class="navbarLogoContainer">
         <i id="bars" class="fa-solid fa-bars fa-3x" onclick="showDropDown()"></i>
-
         <a href="startsida.html"><img id="logo" src="images/webshoppLogoNew.svg"></img></a>
         </div>
 
-        <div class="searchContainer">
-        <div class="searchBar">
+        <div class="searchContainer" onclick="showSearchOptions()">
             <i id="magnifyingGlass" class="fa-solid fa-magnifying-glass"></i>
-            <p>Search...</p>
-        </div>
+            <input id="searchBar" type="text" placeholder="Search..." onkeyup="search()">
         </div>
 
         <div class="headerEndContainer">
@@ -34,12 +31,20 @@
     <div id="dropDown" style="visibility: hidden;">
         <div class="dropDownText">
             <p class="dropDownRubrik">Produkter</p>
+            <a id="dropDownTextP" href="allProducts.html"><p>Alla Produkter</p></a>
             <a id="dropDownTextP" href="startsida.html#popular"><p>Populärast</p></a>
-            <a id="dropDownTextP" href="#nyheter"><p id="dropDownTextP">Nyheter</p></a>
-            <a id="dropDownTextP" href="#sommar"><p id="dropDownTextP">Sommar</p></a>
-            <a id="dropDownTextP" href=""><p id="dropDownTextP">Tröjor</p></a>
-            <a id="dropDownTextP" href=""><p id="dropDownTextP">Byxor</p></a>
-            <a id="dropDownTextP" href=""><p id="dropDownTextP">Jackor</p></a>
+            <a id="dropDownTextP" href="startsida.html#nyheter"><p>Nyheter</p></a>
+            <a id="dropDownTextP" href="startsida.html#sommar"><p>Sommar</p></a>
+        </div>
+    </div>
+    <div class="searchOptionsContainer" id="searchOptionsContainer" style="visibility: hidden;">
+        <div class="searchOptions" id="searchOptions">
+            <a id="searchOptionsText" class="searchItems" href="brownCargoPants.html"><p>Brown Cargo Pants</p></a>
+            <a id="searchOptionsText" class="searchItems" href="pinkCargoPants.html"><p>Pink Cargo Pants</p></a>
+            <a id="searchOptionsText" class="searchItems" href="linnenShirt.html"><p>Linen Shirt</p></a>
+            <a id="searchOptionsText" class="searchItems" href="beigeJacket.html"><p>Beige Jacket</p></a>
+            <a id="searchOptionsText" class="searchItems" href="brownCargoPants.html"><p>Beige College Jacket</p></a>
+            <a id="searchOptionsText" class="searchItems" href="dressShirt.html"><p>T-shirt</p></a>
         </div>
     </div>
 
@@ -50,13 +55,25 @@
             <div class="prodcutTextContainer">
                 <p class="productName">Brown Cargo Pants</p>
                 <p class="productCompany">By Nordström</p>
-                <p class="productCost">1100 kr</p>
-                <div class="addToShoppingCart">
-                <p> Add to Shopping Cart</p>
-                <a href=""><i id="shoppingCartPlus" class="fa-solid fa-plus fa-2x"></i></a>
+                <p id="star"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></p>
+                <p class="productCost">900 kr</p>
+                <div>
+                <form>
+                    <select name="size" id="sizeForm">
+                        <option value="0">Select Size</option>
+                        <option value="XS">XS</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                    </select>
+                </form>
+                <input type="number" placeholder="1" min="1">
                 </div>
+                <a href="" class="addToCart"><div>Add To Cart</div></a>
             </div>
         </div>
+
     </div>
 
     <div class="footer">
@@ -96,6 +113,15 @@
 <script>
     function showDropDown() {
         var node = document.getElementById('dropDown');
+        if (node.style.visibility=='visible') {
+            node.style.visibility = 'hidden';
+        }
+        else
+            node.style.visibility = 'visible'
+    }
+
+    function showSearchOptions() {
+        var node = document.getElementById('searchOptionsContainer');
         if (node.style.visibility=='visible') {
             node.style.visibility = 'hidden';
         }

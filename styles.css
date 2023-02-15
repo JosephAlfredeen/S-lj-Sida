@@ -15,6 +15,7 @@ img{
 }
 a:hover{
     transform: scale(1.05);
+    transition: all 0.4s ease;
 }
 
 
@@ -65,7 +66,7 @@ a:hover{
 
 
     width: 200px;
-    height: 100px;
+    height: 91px;
 
     font-size: 30px;
     border-radius: 5px;
@@ -93,7 +94,7 @@ a:hover{
 
     background-color: aliceblue;
     color: #555555;
-    font-size: 20px;
+    font-size: 15px;
 
     border: none;
     outline: none;
@@ -107,7 +108,7 @@ a:hover{
     width: 100%;
 }
 .searchOptions{
-    background-color: aliceblue;
+    background-color: white;
     width: 20%;
     height: fit-content;
     padding: 15px;
@@ -244,24 +245,22 @@ a:hover{
     text-decoration: none;
 }
 
-#§ar, #nyheter, #sommar{
+#popular, #nyheter, #sommar{
     scroll-margin-top: 100px;
 }
 
 
-.pupularText{
-    margin-top: 0.5%;
+.popularText{
     text-align: center;
 
     color: #555555;
     font-size: 40px;
 }
-#allProducts{
-    margin-top: 0.5%;
-    text-align: center;
-
-    color: #555555;
-    font-size: 40px;
+#allProductsText{
+    margin-top: 150px;
+    float: right;
+    margin-right: 7%;
+    font-weight: 600;
 }
 
 .imageContainer{
@@ -276,6 +275,20 @@ a:hover{
     background-color: #D67622;
     height: fit-content;
     width: 80%;
+}
+
+.allProuctsContainer{
+    margin-left: auto;
+    margin-right: auto;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    flex: 1 0 21%;
+
+    padding-top: 30px;
+    background-color: #D67622;
+    width: 98%;
 }
 
 .imageTextContainer{
@@ -294,6 +307,19 @@ a:hover{
 .imageTextContainer img{
     max-width: 100%;
 }
+.imageTextContainer p{
+    display: flex;
+    justify-content: flex-start !important;
+    margin-bottom: 0;
+}
+#star{
+    color: gold;
+    margin: 2px 0 10px 0;
+}
+
+
+
+
 
 .footer{
     display: flex;
@@ -311,6 +337,9 @@ a:hover{
     justify-content: center;
     flex-direction: column;
 }
+.footerText p:hover{
+    padding-left: 8px;
+}
 
 .footerRubrik{
     font-weight: 500;
@@ -327,16 +356,12 @@ a:hover{
 
 
 
-
-
 .productContainer{
     display: flex;
     justify-content: center;
-    align-items: center;
 
-    margin:auto;
-
-    height: 800px;
+    height: fit-content;
+    padding: 200px 0 200px 0;
     width: 100%;
     background-image: linear-gradient(to right, #7D3D22, #D67622 , #7D3D22);
 }
@@ -358,24 +383,46 @@ a:hover{
 }
 
 .productCost{
-    font-size: 60px;
-    color: red;
-    transform: rotate(15deg);
-    margin-top: 15%;
-    margin-bottom: 0;
+    font-size: xx-large;
+    margin: 5px 0 30px 0;
 }
 
-.addToShoppingCart{
+#sizeForm{
+    width: 130px;
+    height: 38px;
+    border-radius: 5px;
+    text-align: center;
+    border: none;
+}
+.productContainer input{
+    width: 30px;
+    height: 35px;
+    border-radius: 5px;
+    border: none;
+    text-align: center;
+}
+.prodcutTextContainer div{
     display: flex;
-    flex-wrap: wrap;
-    align-items: center;
+    align-items: flex-end;
     gap: 5%;
 }
+.addToCart{
+    display: flex;
+    justify-content: center;
+    align-items: center !important;
 
-#shoppingCartPlus{
-    cursor: pointer;
-    color: aliceblue;
+    background-color: #7D3D22;
+    width: 180px;
+    height: 75px;
+    border-radius: 10px;
+    margin-top: 15px;
+    font-size: x-large;
+    color: aliceblue !important;
+    text-decoration: none;
 }
-#shoppingCartPlus:hover{
-    color: black;
+.addToCart:hover{
+    text-decoration: underline;
+}
+#productDescriptionContainer{
+    width: 100%;
 }
