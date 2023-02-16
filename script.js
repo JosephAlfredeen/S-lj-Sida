@@ -1,27 +1,38 @@
 let http = new XMLHttpRequest();
 http.open('get', 'products.json', true);
 http.send();
-http.onload = function(){
+http.onload = function loadAll(){
    if(this.readyState == 4 && this.status == 200){
       let products = JSON.parse(this.responseText);
       let output = "";
-      for(let item of products){
-         output += `
-            <div class="product">
-               <img src="${item.image}" alt="${item.description}">
-               <p class="title">${item.title}</p>
-               <p class="description">${item.description}</p>
-               <p class="price">
-                  <span>${item.price}</span>
-                  <span>€</span>
-               </p>
-               <p class="cart">Add to cart <i class="bx bx-cart-alt"></i></p>
-            </div>
-         `;
-      }
-      document.querySelector(".products").innerHTML = output;
+      
+
+        for(let item of products){
+            output += `
+               <div class="product">
+                  <img src="${item.image}" alt="${item.description}">
+                  <p class="title">${item.title}</p>
+                  <p class="brand">${item.brand}</p>
+                  <div class="priceContainer">
+                   <p class="price">
+                       <span>${item.price}</span>
+                       <span>SEK</span>
+                   </p>
+                   <span id="star"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span>
+                  </div>
+               </div>
+            `;
+         }
+;
+      document.querySelector('.products1').innerHTML = output;
+      document.querySelector('.products2').innerHTML = output;
+      document.querySelector('.products3').innerHTML = output;
+
    }
 }
+
+
+
 
 function showDropDown() {
     var node = document.getElementById('dropDown');
@@ -44,7 +55,7 @@ function showSearchOptions() {
 function searchOne() {
 let input = document.getElementById('searchBar').value
 input=input.toLowerCase();
-let x = document.getElementsByClassName('imageTextContainer');
+let x = document.getElementsByClassName('product');
   
 for (i = 0; i < x.length; i++) { 
     if (!x[i].innerHTML.toLowerCase().includes(input)) {

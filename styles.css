@@ -7,7 +7,6 @@ body{
     color: aliceblue;
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
-    background-color: black;
 }
 
 img{
@@ -17,6 +16,11 @@ img{
 a:hover{
     transform: scale(1.05);
     transition: all 0.4s ease;
+}
+.product:hover{
+    transform: scale(1.1);
+    transition: all 0.4s ease;
+    box-shadow: 3px 5px 1px 1px #2c2c2c;
 }
 
 
@@ -266,55 +270,6 @@ width: 100%;}
     font-weight: 600;
 }
 
-.imageContainer{
-    margin-left: auto;
-    margin-right: auto;
-
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-
-    padding-top: 30px;
-    background-color: #D67622;
-    height: fit-content;
-    width: 80%;
-}
-
-.allProuctsContainer{
-    margin-left: auto;
-    margin-right: auto;
-
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    flex: 1 0 21%;
-
-    padding-top: 30px;
-    background-color: #D67622;
-    width: 98%;
-}
-
-.imageTextContainer{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-
-    font-size: larger;
-    cursor: pointer;
-}
-.imageTextContainer:hover{
-    text-decoration: underline;
-}
-.imageTextContainer img{
-    max-width: 100%;
-}
-.imageTextContainer p{
-    display: flex;
-    justify-content: flex-start !important;
-    margin-bottom: 0;
-}
 #star{
     color: gold;
     margin: 2px 0 10px 0;
@@ -446,4 +401,49 @@ width: 100%;}
 }
 #productDescriptionContainer{
     width: 100%;
+}
+
+
+
+
+
+
+.products, .products1, .products2, .products3{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 3%;
+    width: 84%;
+    padding: 10% 3% 0 3%;
+    margin: 0 5% 0 5%;
+
+    background-color: #D67622;
+}
+.product{
+    border-style: solid;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-width: 2px;
+}
+.products img{
+    max-width: 100%;
+}
+.products .title{
+    font-size: x-large;
+    font-weight: 500;
+    margin-bottom: 0;
+}
+.products .price{
+    font-size: large;
+    text-align: center;
+}
+.products .priceContainer{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    width: 50%;
+    margin: 0 25% 0 25%;
 }
