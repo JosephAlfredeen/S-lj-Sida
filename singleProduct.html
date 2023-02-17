@@ -4,14 +4,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lazango</title>
+    <title>Document</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <script src="script.js"></script>
+    <script> const params = new Proxy(new URLSearchParams(window.location.search), {
+        get: (searchParams, prop) => searchParams.get(prop),
+      });
+      // Get the value of "some_key" in eg "https://example.com/?some_key=some_value"
+      let value = params.id; // "some_value"
+      </script>
 </head>
-<body onload='loadAll([".productsPopular", ".productsNyheter", ".productsSommar"])'>
+<body onload="loadSingle(value)">
 
-    <div class="header">
+
+<div class="header">
 
         <div class="navbarLogoContainer">
         <i id="bars" class="fa-solid fa-bars fa-3x" onclick="showDropDown()"></i>
@@ -36,7 +43,6 @@
             <a id="dropDownTextP" href="startsida.html#popular"><p>Populärast</p></a>
             <a id="dropDownTextP" href="startsida.html#nyheter"><p>Nyheter</p></a>
             <a id="dropDownTextP" href="startsida.html#sommar"><p>Sommar</p></a>
-
         </div>
     </div>
     <div class="searchOptionsContainer" id="searchOptionsContainer" style="visibility: hidden;">
@@ -50,49 +56,29 @@
         </div>
     </div>
 
-    <div class="mainBack">
-        <div class="mainContainer">
-            <a href=""><img src="images/webshoppMainLeft.jpg" alt="Image of a man"></a>
-            <div class="buttonContainer">
-                <a href="#popular" class="mainButton"><div >Populärast</div></a>
-                <a href="#nyheter" class="mainButton"><div >Nyheter</div></a>
-                <a href="#sommar" class="mainButton"><div >Sommar</div></a>
-            </div>
-            <a href=""><img src="images/webshoppMainRight.jpeg" alt="Image from Peaky Blinders"></a>
-       </div>
-    </div>
-
-    <p id="popular" class="popularText">Mest Populära Varor</p>
-    <div class="productsPopular products"></div>
-
-    <p id="nyheter" class="popularText">Nyheter</p>
-    <div class="productsNyheter products"></div>
-
-    <p id="sommar" class="popularText">Sommar</p>
-    <div class="productsSommar products"></div>
-
+    <div id="singleProduct"></div>
 
     <div class="footer">
         <div class="footerText">
-            <h2 class="footerRubrik">Kundservice</h2>
+            <p class="footerRubrik">Kundservice</p>
             <p>Ring Oss</p>
             <p>Maila oss</p>
             <p>Chatta med oss</p>
         </div>
         <div class="footerText">
-            <h2 class="footerRubrik">Information</h2>
+            <p class="footerRubrik">Information</p>
             <p>Våra butiker</p>
             <p>Köps policy</p>
             <p>Bli medlem</p>
         </div>
         <div class="footerText">
-            <h2 class="footerRubrik">Det här är Lazango</h2>
+            <p class="footerRubrik">Det här är Lazango</p>
             <p>Vi på Lazango</p>
             <p>Om oss</p>
             <p>Jobba på Lazango</p>
         </div>
         <div class="footerText">
-            <h2 class="footerRubrik">Socialt Ansvar</h2>
+            <p class="footerRubrik">Socialt Ansvar</p>
             <p>Våra produkter</p>
             <p>Våra leveranser</p>
             <p>Vårt jobb för utsatta</p>
@@ -105,7 +91,5 @@
             <i class="fab fa-snapchat fa-2x"></i>
         </div>
     </div>
-
-
 </body>
 </html>

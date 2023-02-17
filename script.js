@@ -1,35 +1,92 @@
 let http = new XMLHttpRequest();
 http.open('get', 'products.json', true);
 http.send();
-http.onload = function loadAll(){
-   if(this.readyState == 4 && this.status == 200){
-      let products = JSON.parse(this.responseText);
+
+function loadAll(classes){
+   if(http.readyState == 4 && http.status == 200){
+      let products = JSON.parse(http.responseText);
       let output = "";
       
 
-        for(let item of products){
+      for (let item of products) {
+        let stars = "";
+        for (let i = 0; i < item.rating; i++) {
+            stars += '<i class="fa-solid fa-star"></i>';
+        }
             output += `
-               <div class="product">
-                  <img src="${item.image}" alt="${item.description}">
-                  <p class="title">${item.title}</p>
-                  <p class="brand">${item.brand}</p>
-                  <div class="priceContainer">
-                   <p class="price">
-                       <span>${item.price}</span>
-                       <span>SEK</span>
-                   </p>
-                   <span id="star"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span>
-                  </div>
-               </div>
+               <a href="${item.href}">
+                <div class="product">
+                    <img src="${item.image}" alt="${item.description}">
+                    <p class="title">${item.title}</p>
+                    <p class="brand">${item.brand}</p>
+                    <div class="priceContainer">
+                    <p class="price">
+                        <span>${item.price}</span>
+                        <span>SEK</span>
+                    </p>
+                    <div id="star">
+                    ${stars}
+                    </div>
+                    </div>
+                </div>
+               </a>
             `;
+         };
+         for (c in classes){
+            document.querySelector(classes[c]).innerHTML = output;
          }
-;
-      document.querySelector('.products1').innerHTML = output;
-      document.querySelector('.products2').innerHTML = output;
-      document.querySelector('.products3').innerHTML = output;
-
    }
-}
+} 
+
+
+function loadSingle(id){
+    if(http.readyState == 4 && http.status == 200){
+       let products = JSON.parse(http.responseText);
+       let output = "";
+
+
+         for(let item of products){
+            if (item.id == id){
+                output += `
+             
+                    <div class="productContainer">
+                        <div class="productInfoContainer">
+                            <img src="${item.image}" alt="${item.description}">
+                            <div class="productTextContainer">
+                                <p class="title">${item.title}</p>
+                                <p class="brand">${item.brand}</p>
+                                <div class="ratingPriceContainer">
+                                    <span id="star"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span>
+                                    <span id="priceText">${item.price} <span>SEK</span></span>
+                                </div>
+                                <div class="formContainer">
+                                <form>
+                                    <select name="size" id="sizeForm">
+                                        <option value="0">Select Size</option>
+                                        <option value="XS">XS</option>
+                                        <option value="S">S</option>
+                                        <option value="M">M</option>
+                                        <option value="L">L</option>
+                                        <option value="XL">XL</option>
+                                    </select>
+                                </form>
+                                <input type="number" placeholder="1" min="1">
+                                </div>
+                                <a href="" class="addToCart"><div>Add To Cart</div></a>
+                                </div>
+                            </div>
+                            <div id="productDescription">
+                                <h2>Description</h2>
+                                <p>${item.description}</p>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            };
+            document.querySelector('#singleProduct').innerHTML = output;
+        }
+    }
+ }
 
 
 
@@ -65,6 +122,5 @@ for (i = 0; i < x.length; i++) {
         x[i].style.display="";          
     }
 }
-
-
 }
+

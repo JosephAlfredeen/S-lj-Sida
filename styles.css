@@ -17,6 +17,9 @@ a:hover{
     transform: scale(1.05);
     transition: all 0.4s ease;
 }
+a:link{
+    text-decoration: none;
+}
 .product:hover{
     transform: scale(1.1);
     transition: all 0.4s ease;
@@ -24,9 +27,7 @@ a:hover{
 }
 
 
-table {border: 1px solid white;
-height: 500px;
-width: 100%;}
+
 .header{
     z-index: 9999;
     display: flex;
@@ -46,7 +47,7 @@ width: 100%;}
     justify-content: space-around;
     margin-left: 2%;
 
-    width: 20%;
+    min-width: 20%;
 
     cursor: pointer;
 }
@@ -124,19 +125,14 @@ width: 100%;}
     position: fixed;
     margin-top: 65px;
     z-index: 999999;
-
 }
-
 #magnifyingGlass{
     color: black;
 }
 
 .headerEndContainer{
     display: flex;
-    flex-direction: row;
-    align-items: center;
     justify-content: space-around;
-
     width: 20%;
 }
 
@@ -156,7 +152,7 @@ width: 100%;}
     z-index: 9999;
 
     margin-top: 100px;
-    width: 12%;
+    min-width: 15%;
     height: fit-content;
     background-color: #7D3D22;
     border-radius: 0 0 10px 0;
@@ -313,14 +309,18 @@ width: 100%;}
 
 
 
+
+
+
+
 .productContainer{
     display: flex;
     justify-content: center;
     flex-direction: column;
 
     height: fit-content;
-    padding: 200px 0 200px 0;
     width: 100%;
+    padding: 100px 0 100px 0;
     background-image: linear-gradient(to right, #7D3D22, #D67622 , #7D3D22);
 }
 
@@ -331,20 +331,6 @@ width: 100%;}
     width: 60%;
     margin-left: 20%;
     margin-right: 20%;
-}
-
-.productName{
-    font-size: 50px;
-    margin: 0;
-}
-
-.prodcutTextContainer{
-    width: 80%;
-}
-
-.productCost{
-    font-size: xx-large;
-    margin: 5px 0 30px 0;
 }
 
 #sizeForm{
@@ -380,7 +366,35 @@ width: 100%;}
     text-decoration: underline;
     margin: 50px 0 0 0;
 }
-
+#singleProduct{
+    margin-top: 100px;
+    font-size: larger;
+}
+#singleProduct img{
+    max-width: 320px;
+    max-height: 320px;
+}
+#singleProduct .title{
+    font-size: 50px;
+    margin: 0;
+}
+#singleProduct .price{
+    margin: 5px 0 30px 0;
+}
+#singleProduct .ratingPriceContainer{
+    display: flex;
+    flex-direction: column;
+}
+#singleProduct #priceText{
+    gap: 3%;
+    font-size: xx-large;
+    margin-bottom: 5%;
+}
+#singleProduct .formContainer{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10%;
+}
 
 .addToCart{
     display: flex;
@@ -425,6 +439,11 @@ width: 100%;}
     padding: 10px;
     margin-bottom: 10px;
     border-width: 2px;
+    color: aliceblue;
+}
+.product:hover{
+    text-decoration: underline;
+    color: aliceblue;
 }
 .products img{
     max-width: 100%;
@@ -444,6 +463,6 @@ width: 100%;}
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    width: 50%;
+    width: 70%;
     margin: 0 25% 0 25%;
 }

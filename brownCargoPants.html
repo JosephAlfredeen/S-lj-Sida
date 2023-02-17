@@ -7,8 +7,9 @@
     <title>Brown Cargo Pants</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <script src="script.js"></script>
 </head>
-<body>
+<body onload="loadSingle()">
 
     <div class="header">
 
@@ -49,35 +50,7 @@
     </div>
 
 
-    <div class="productContainer">
-        <div class="productInfoContainer">
-            <img class="clothes" src="images/webshoppBrownPants.jpg" alt="Image Of brown Pants">
-            <div class="prodcutTextContainer">
-                <p class="productName">Brown Cargo Pants</p>
-                <p class="productCompany">By Nordström</p>
-                <p id="star"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></p>
-                <p class="productCost">900 kr</p>
-                <div>
-                <form>
-                    <select name="size" id="sizeForm">
-                        <option value="0">Select Size</option>
-                        <option value="XS">XS</option>
-                        <option value="S">S</option>
-                        <option value="M">M</option>
-                        <option value="L">L</option>
-                        <option value="XL">XL</option>
-                    </select>
-                </form>
-                <input type="number" placeholder="1" min="1">
-                </div>
-                <a href="" class="addToCart"><div>Add To Cart</div></a>
-            </div>
-        </div>
-    <div id="productDescription">
-        <h2>Description</h2>
-        <p>Pants are an article of clothing that extends from the waist to around the ankles and fits around each leg. Also known as trousers, pants are worn by people of all genders and ages. As opposed to a dress or a skirt, pants are divided down the middle and have openings for each leg.</p>
-    </div>
-    </div>
+    <div id="singleProduct"></div>
 
     <div class="footer">
         <div class="footerText">
@@ -112,8 +85,6 @@
             <i class="fab fa-snapchat fa-2x"></i>
         </div>
     </div>
-
-    <script src="script.js"></script>
 
 </body>
 </html>

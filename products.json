@@ -1,47 +1,65 @@
 [
     {
+        "id":1,
        "image": "images/webshoppBrownPants.jpg",
        "title": "Brown cargo pants",
        "brand": "Nordström",
        "description": "Pants are an article of clothing that extends from the waist to around the ankles and fits around each leg. Also known as trousers, pants are worn by people of all genders and ages. As opposed to a dress or a skirt, pants are divided down the middle and have openings for each leg.",
        "price": "900",
-       "class": "Popular"
+       "class": "Popular",
+       "href":"singleProduct.html?id=1",
+       "rating":5
     },
     {
+        "id":2,
        "image": "images/webshoppBegieJacket.jpg",
        "title": "Beige Jacket",
        "brand": "H&M",
        "description":"A garment for the upper body usually having a front opening, collar, lapels, sleeves, and pockets. : something worn or fastened around the body but not for use as clothing.",
-       "price": "700"
+       "price": "700",
+       "href":"singleProduct.html?id=2",
+       "rating":3
     },
     {
+        "id":3,
         "image": "images/webshoppCollegeJacket.jpg",
         "title": "College Jacket",
         "brand": "Gant",
         "description":"A garment for the upper body usually having a front opening, collar, lapels, sleeves, and pockets. : something worn or fastened around the body but not for use as clothing.",
         "price": "1200",
-        "class": "Popular"
+        "class": "Popular",
+        "href":"singleProduct.html?id=3",
+        "rating":4
      },
      {
+        "id":4,
         "image": "images/webshoppDresshirt.jpeg",
         "title": "Fancy Shirt",
         "brand": "Gant",
         "description":"A garment for the upper body usually having a front opening, collar, lapels, sleeves, and pockets. : something worn or fastened around the body but not for use as clothing.",
-        "price": "1000"
+        "price": "1000",
+        "href":"singleProduct.html?id=4",
+        "rating":3
      },
      {
+        "id":5,
         "image": "images/webshoppLinenShirt.jpg",
         "title": "Linen Shirt",
         "brand": "Roseborn",
         "description":"A garment for the upper body usually having a front opening, collar, lapels, sleeves, and pockets. : something worn or fastened around the body but not for use as clothing.",
         "price": "800",
-        "class": "Popular"
+        "class": "Popular",
+        "href":"singleProduct.html?id=5",
+        "rating":5
      },
      {
+        "id":6,
         "image": "images/webshoppPinkPants.jpg",
-        "title": "Pink Cargo Pants",
+        "title": "Pink Pants",
         "brand": "Nordström",
         "description":"A garment for the upper body usually having a front opening, collar, lapels, sleeves, and pockets. : something worn or fastened around the body but not for use as clothing.",
-        "price": "800"
+        "price": "800",
+        "href":"singleProduct.html?id=6",
+        "rating":4
      }
  ]

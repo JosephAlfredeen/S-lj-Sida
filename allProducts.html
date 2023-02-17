@@ -7,14 +7,15 @@
     <title>Lazango</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <script src="script.js"></script>
 </head>
-<body>
+<body onload="loadAll(['.productsPopular'])">
 
     <div class="header">
 
         <div class="navbarLogoContainer">
         <i id="bars" class="fa-solid fa-bars fa-3x" onclick="showDropDown()"></i>
-        <a href="startsida.html"><img id="logo" src="images/webshoppLogoNew.svg"></img></a>
+        <a href="startsida.html"><img id="logo" src="images/webshoppLogoNew.png"></img></a>
         </div>
 
         <div class="searchContainer" onclick="showSearchOptions()">
@@ -50,7 +51,7 @@
 
 
     <p class="popularText" id="allProductsText">Alla Våra Produkter</p>
-    <div class="products1 products"></div>
+    <div class="productsPopular products"></div>
 
 
     <div class="footer">
@@ -86,8 +87,6 @@
             <i class="fab fa-snapchat fa-2x"></i>
         </div>
     </div>
-
-<script src="script.js"></script>
 
 </body>
 </html>
