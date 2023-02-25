@@ -1,14 +1,19 @@
-let http = new XMLHttpRequest();
-http.open('get', 'products.json', true);
-http.send();
-
 function loadAll(classes){
-   if(http.readyState == 4 && http.status == 200){
-      let products = JSON.parse(http.responseText);
-      let output = "";
-      
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', 'products.json', true);
+    
+    xhr.onload = () => {
+      products = JSON.parse(xhr.responseText);
+      showAll(classes)
+    };
+    xhr.send();
+}
 
-      for (let item of products) {
+function showAll(classes){
+    let output = "";
+    
+         for(let item of products){
+
         let stars = "";
         for (let i = 0; i < item.rating; i++) {
             stars += '<i class="fa-solid fa-star"></i>';
@@ -35,16 +40,24 @@ function loadAll(classes){
          for (c in classes){
             document.querySelector(classes[c]).innerHTML = output;
          }
-   }
-} 
+}
 
 
 function loadSingle(id){
-    if(http.readyState == 4 && http.status == 200){
-       let products = JSON.parse(http.responseText);
-       let output = "";
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', 'products.json', true);
+    
+    xhr.onload = () => {
+      products = JSON.parse(xhr.responseText);
+      showProduct(products, id)
+    };
+    xhr.send();
+}
 
+function showProduct(products, id){
 
+    let output = "";
+    
          for(let item of products){
             if (item.id == id){
                 output += `
@@ -59,20 +72,6 @@ function loadSingle(id){
                                     <span id="star"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span>
                                     <span id="priceText">${item.price} <span>SEK</span></span>
                                 </div>
-                                <div class="formContainer">
-                                <form>
-                                    <select name="size" id="sizeForm">
-                                        <option value="0">Select Size</option>
-                                        <option value="XS">XS</option>
-                                        <option value="S">S</option>
-                                        <option value="M">M</option>
-                                        <option value="L">L</option>
-                                        <option value="XL">XL</option>
-                                    </select>
-                                </form>
-                                <input type="number" placeholder="1" min="1">
-                                </div>
-                                <a href="" class="addToCart"><div>Add To Cart</div></a>
                                 </div>
                             </div>
                             <div id="productDescription">
@@ -84,9 +83,8 @@ function loadSingle(id){
                 `;
             };
             document.querySelector('#singleProduct').innerHTML = output;
-        }
     }
- }
+}
 
 
 
@@ -100,27 +98,17 @@ function showDropDown() {
         node.style.visibility = 'visible'
 }
 
-function showSearchOptions() {
-    var node = document.getElementById('searchOptionsContainer');
-    if (node.style.visibility=='visible') {
-        node.style.visibility = 'hidden';
-    }
-    else
-        node.style.visibility = 'visible'
-}
-
 function searchOne() {
 let input = document.getElementById('searchBar').value
 input=input.toLowerCase();
 let x = document.getElementsByClassName('product');
   
-for (i = 0; i < x.length; i++) { 
-    if (!x[i].innerHTML.toLowerCase().includes(input)) {
-        x[i].style.display="none";
-    }
-    else {
-        x[i].style.display="";          
+    for (i = 0; i < x.length; i++) { 
+        if (!x[i].innerHTML.toLowerCase().includes(input)) {
+            x[i].style.display="none";
+        }
+        else {
+            x[i].style.display="";          
+        }
     }
 }
-}
-

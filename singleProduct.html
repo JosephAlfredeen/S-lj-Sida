@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Lazango Product</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <script src="script.js"></script>
@@ -15,25 +15,19 @@
       let value = params.id; // "some_value"
       </script>
 </head>
-<body onload="loadSingle(value)">
+<body>
 
 
-<div class="header">
 
-        <div class="navbarLogoContainer">
+    <div class="header">
         <i id="bars" class="fa-solid fa-bars fa-3x" onclick="showDropDown()"></i>
-        <a href="startsida.html"><img id="logo" src="images/webshoppLogoNew.png"></img></a>
-        </div>
 
-        <div class="searchContainer" onclick="showSearchOptions()">
+        <div class="searchContainer">
             <i id="magnifyingGlass" class="fa-solid fa-magnifying-glass"></i>
             <input id="searchBar" type="text" placeholder="Search..." onkeyup="searchOne()">
         </div>
 
-        <div class="headerEndContainer">
-        <i id="shoppingCart" class="fa-solid fa-cart-shopping fa-3x"></i>
-        </div>
-
+        <a href="startsida.html"><img id="logo" src="images/webshoppLogoNew.png"></img></a>
     </div>
 
     <div id="dropDown" style="visibility: hidden;">
@@ -45,40 +39,32 @@
             <a id="dropDownTextP" href="startsida.html#sommar"><p>Sommar</p></a>
         </div>
     </div>
-    <div class="searchOptionsContainer" id="searchOptionsContainer" style="visibility: hidden;">
-        <div class="searchOptions" id="searchOptions">
-            <a id="searchOptionsText" class="searchItems" href="brownCargoPants.html"><p>Brown Cargo Pants</p></a>
-            <a id="searchOptionsText" class="searchItems" href="pinkCargoPants.html"><p>Pink Cargo Pants</p></a>
-            <a id="searchOptionsText" class="searchItems" href="linnenShirt.html"><p>Linen Shirt</p></a>
-            <a id="searchOptionsText" class="searchItems" href="beigeJacket.html"><p>Beige Jacket</p></a>
-            <a id="searchOptionsText" class="searchItems" href="brownCargoPants.html"><p>Beige College Jacket</p></a>
-            <a id="searchOptionsText" class="searchItems" href="dressShirt.html"><p>T-shirt</p></a>
-        </div>
+
+    <div id="singleProduct">
+        <h1 style="color:black;">hej</h1>
     </div>
-
-    <div id="singleProduct"></div>
-
+    
     <div class="footer">
         <div class="footerText">
-            <p class="footerRubrik">Kundservice</p>
+            <h2 class="footerRubrik">Kundservice</h2>
             <p>Ring Oss</p>
             <p>Maila oss</p>
             <p>Chatta med oss</p>
         </div>
         <div class="footerText">
-            <p class="footerRubrik">Information</p>
+            <h2 class="footerRubrik">Information</h2>
             <p>Våra butiker</p>
             <p>Köps policy</p>
             <p>Bli medlem</p>
         </div>
         <div class="footerText">
-            <p class="footerRubrik">Det här är Lazango</p>
+            <h2 class="footerRubrik">Det här är Lazango</h2>
             <p>Vi på Lazango</p>
             <p>Om oss</p>
             <p>Jobba på Lazango</p>
         </div>
         <div class="footerText">
-            <p class="footerRubrik">Socialt Ansvar</p>
+            <h2 class="footerRubrik">Socialt Ansvar</h2>
             <p>Våra produkter</p>
             <p>Våra leveranser</p>
             <p>Vårt jobb för utsatta</p>
@@ -91,5 +77,13 @@
             <i class="fab fa-snapchat fa-2x"></i>
         </div>
     </div>
+
 </body>
+<script> 
+console.log(value)
+document.addEventListener("DOMContentLoaded", function(event) { 
+    loadSingle(value)
+});
+
+</script>
 </html>

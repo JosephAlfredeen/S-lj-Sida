@@ -17,22 +17,23 @@ a:hover{
     transform: scale(1.05);
     transition: all 0.4s ease;
 }
-a:link{
-    text-decoration: none;
-}
 .product:hover{
     transform: scale(1.1);
     transition: all 0.4s ease;
     box-shadow: 3px 5px 1px 1px #2c2c2c;
 }
 
+a, a:link, a:visited, a:focus, a:hover, a:active{
+    color:aliceblue;
+    text-decoration:none;
+}
 
 
 .header{
     z-index: 9999;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     position: fixed;
 
     background-color:#7D3D22;
@@ -72,7 +73,7 @@ a:link{
     justify-content: center;
 
 
-    width: 200px;
+    max-width: 200px;
     height: 91px;
 
     font-size: 30px;
@@ -108,24 +109,6 @@ a:link{
     box-shadow: none;
 }
 
-.searchOptionsContainer{
-    display: flex;
-    justify-content: center;
-
-    width: 100%;
-}
-.searchOptions{
-    background-color: white;
-    width: 20%;
-    height: fit-content;
-    padding: 15px;
-    color: #555555;
-    border-radius: 0 0 5px 5px;
-
-    position: fixed;
-    margin-top: 65px;
-    z-index: 999999;
-}
 #magnifyingGlass{
     color: black;
 }
@@ -177,9 +160,6 @@ a:link{
     text-decoration: underline;
     text-decoration-color: aliceblue;
     cursor: pointer;
-}
-.dropDownText a:visited{
-    text-decoration: none;
 }
 
 
@@ -244,9 +224,6 @@ a:link{
     text-decoration: underline;
     color: aliceblue;
 }
-.mainButton a:visited{
-    text-decoration: none;
-}
 
 #popular, #nyheter, #sommar{
     scroll-margin-top: 100px;
@@ -277,6 +254,7 @@ a:link{
 .footer{
     display: flex;
     justify-content: space-around;
+    align-items: flex-start;
 
     background-color: #D67622;
     width: 100%;
@@ -289,12 +267,13 @@ a:link{
     display: flex;
     justify-content: center;
     flex-direction: column;
+    color: aliceblue !important;
 }
 .footerText p:hover{
     padding-left: 8px;
 }
 
-.footerRubrik{
+.footerText h2{
     font-weight: 500;
     font-size: larger;
     text-decoration: underline;
@@ -302,9 +281,8 @@ a:link{
 
 .footerIcons{
     display: flex;
+    gap: 15px;
     flex-direction: column;
-    gap: 10%;
-    margin-top: 1%;
 }
 
 
@@ -331,14 +309,6 @@ a:link{
     width: 60%;
     margin-left: 20%;
     margin-right: 20%;
-}
-
-#sizeForm{
-    width: 130px;
-    height: 38px;
-    border-radius: 5px;
-    text-align: center;
-    border: none;
 }
 .productContainer input{
     width: 30px;
@@ -367,7 +337,7 @@ a:link{
     margin: 50px 0 0 0;
 }
 #singleProduct{
-    margin-top: 100px;
+    padding-top: 100px;
     font-size: larger;
 }
 #singleProduct img{
@@ -394,24 +364,6 @@ a:link{
     display: flex;
     flex-wrap: wrap;
     gap: 10%;
-}
-
-.addToCart{
-    display: flex;
-    justify-content: center;
-    align-items: center !important;
-
-    background-color: #7D3D22;
-    width: 180px;
-    height: 75px;
-    border-radius: 10px;
-    margin-top: 15px;
-    font-size: x-large;
-    color: aliceblue !important;
-    text-decoration: none;
-}
-.addToCart:hover{
-    text-decoration: underline;
 }
 #productDescriptionContainer{
     width: 100%;
