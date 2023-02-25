@@ -8,8 +8,7 @@ function loadAll(classes){
       products = JSON.parse(xhr.responseText);
       showAll(classes)
       productList = document.querySelector('.productList');
-      console.log("loadAll done")
-      eventListeners();
+      eventListeners(); 
     };
     xhr.send();
 }
@@ -31,14 +30,6 @@ function showAll(classes){
                         <p class="title">${item.title}</p>
                         <p class="brand">${item.brand}</p>
                 </a>
-
-
-                    <button type = "button" class = "add-to-cart-btn">
-                    <i class = "fas fa-shopping-cart"></i>Add To Cart
-                    </button>
-
-
-
                     <div class="priceContainer">
                         <p class="price">
                             <span>${item.price}</span>
@@ -86,10 +77,13 @@ function showProduct(products, id){
                             <div class="productTextContainer">
                                 <p class="title">${item.title}</p>
                                 <p class="brand">${item.brand}</p>
-                                <div class="ratingPriceContainer">
                                     <span id="star"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span>
-                                    <span class="price" id="priceText">${item.price} <span>$</span></span>
-                                </div>
+
+                                <p class="price" id="singlePrice">
+                                    <span>${item.price}</span>
+                                    <span>$</span>
+                                </p>
+
                                     <button type = "button" class = "add-to-cart-btn">
                                     <i class = "fas fa-shopping-cart"></i>Add To Cart
                                     </button>

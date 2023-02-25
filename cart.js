@@ -21,12 +21,18 @@ function eventListeners(){
     });
 
     // add to cart
-    console.log("eventListeners products running")
-    console.log(typeof(productList))
     productList.addEventListener('click', purchaseProduct);
 
     // delete from cart
     cartList.addEventListener('click', deleteProduct);
+
+    // checkout
+    checkout.addEventListener('click', checkoutFunc)
+}
+
+//
+function checkoutFunc(){
+    alert("Your order has been recieved! Thank you come again.");
 }
 
 // update cart info
@@ -126,7 +132,6 @@ function findCartInfo(){
 // delete product from cart list and local storage
 function deleteProduct(e){
     let cartItem;
-    console.log(e.target.tagName)
     if(e.target.tagName === "BUTTON"){
         cartItem = e.target.parentElement;
         cartItem.remove(); // this removes from the DOM only
