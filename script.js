@@ -1,3 +1,5 @@
+var productList;
+
 function loadAll(classes){
     const xhr = new XMLHttpRequest();
     xhr.open('GET', 'products.json', true);
@@ -5,6 +7,9 @@ function loadAll(classes){
     xhr.onload = () => {
       products = JSON.parse(xhr.responseText);
       showAll(classes)
+      productList = document.querySelector('.productList');
+      console.log("loadAll done")
+      eventListeners();
     };
     xhr.send();
 }
@@ -19,22 +24,32 @@ function showAll(classes){
             stars += '<i class="fa-solid fa-star"></i>';
         }
             output += `
+            <div class="product productList">
                <a href="${item.href}">
-                <div class="product">
-                    <img src="${item.image}" alt="${item.description}">
-                    <p class="title">${item.title}</p>
-                    <p class="brand">${item.brand}</p>
+                    <div>
+                        <img src="${item.image}" alt="${item.description}">
+                        <p class="title">${item.title}</p>
+                        <p class="brand">${item.brand}</p>
+                </a>
+
+
+                    <button type = "button" class = "add-to-cart-btn">
+                    <i class = "fas fa-shopping-cart"></i>Add To Cart
+                    </button>
+
+
+
                     <div class="priceContainer">
-                    <p class="price">
-                        <span>${item.price}</span>
-                        <span>SEK</span>
-                    </p>
-                    <div id="star">
-                    ${stars}
-                    </div>
+                        <p class="price">
+                            <span>${item.price}</span>
+                            <span>$</span>
+                        </p>
+                            <div id="star">
+                            ${stars}
+                            </div>
                     </div>
                 </div>
-               </a>
+            </div>
             `;
          };
          for (c in classes){
@@ -50,6 +65,9 @@ function loadSingle(id){
     xhr.onload = () => {
       products = JSON.parse(xhr.responseText);
       showProduct(products, id)
+      productList = document.querySelector('.productList');
+      console.log("loadSingle done")
+      eventListeners();
     };
     xhr.send();
 }
@@ -62,7 +80,7 @@ function showProduct(products, id){
             if (item.id == id){
                 output += `
              
-                    <div class="productContainer">
+                    <div class="productContainer productList">
                         <div class="productInfoContainer">
                             <img src="${item.image}" alt="${item.description}">
                             <div class="productTextContainer">
@@ -70,8 +88,11 @@ function showProduct(products, id){
                                 <p class="brand">${item.brand}</p>
                                 <div class="ratingPriceContainer">
                                     <span id="star"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span>
-                                    <span id="priceText">${item.price} <span>SEK</span></span>
+                                    <span class="price" id="priceText">${item.price} <span>$</span></span>
                                 </div>
+                                    <button type = "button" class = "add-to-cart-btn">
+                                    <i class = "fas fa-shopping-cart"></i>Add To Cart
+                                    </button>
                                 </div>
                             </div>
                             <div id="productDescription">
@@ -79,6 +100,7 @@ function showProduct(products, id){
                                 <p>${item.description}</p>
                             </div>
                         </div>
+                        
                     </div>
                 `;
             };

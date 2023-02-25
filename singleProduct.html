@@ -28,6 +28,30 @@
         </div>
 
         <a href="startsida.html"><img id="logo" src="images/webshoppLogoNew.png" alt="Lazango Logo"></a>
+
+
+
+
+        <div class = "cart">
+            <button type = "button" id = "cart-btn">
+              <i class = "fas fa-shopping-cart"></i>
+              <span id = "cart-count-info">0</span>
+            </button>
+
+        <div class = "cart-container">
+            <p>Din kassa</p>
+            <div class = "cart-list">
+            </div>
+
+            <div class = "cart-total">
+              <h3>Total: $</h3>
+              <span id = "cart-total-value"></span>
+            </div>
+          </div>
+        </div>
+
+
+
     </div>
 
     <div id="dropDown" style="visibility: hidden;">
@@ -40,50 +64,41 @@
         </div>
     </div>
 
-    <div id="singleProduct">
-        <h1 style="color:black;">hej</h1>
-    </div>
+    <div id="singleProduct"></div>
     
     <div class="footer">
         <div class="footerText">
-            <h2 class="footerRubrik">Kundservice</h2>
-            <p>Ring Oss</p>
-            <p>Maila oss</p>
-            <p>Chatta med oss</p>
+            <h2>Kundservice</h2>
+            <p>076-123-45-67</p>
+            <a href="mailto:info@krisjennercommunications.com"><p>Maila oss</p></a>
+            <a href="https://chai.ml/"><p>Chatta med oss</p></a>
         </div>
         <div class="footerText">
-            <h2 class="footerRubrik">Information</h2>
-            <p>Våra butiker</p>
-            <p>Köps policy</p>
-            <p>Bli medlem</p>
+            <h2>Information</h2>
+            <a href="https://www.google.com/maps/search/zalando/@53.6073019,3.296327,5z/data=!3m1!4b1"><p>Våra butiker</p></a>
+            <a></a>
         </div>
         <div class="footerText">
-            <h2 class="footerRubrik">Det här är Lazango</h2>
-            <p>Vi på Lazango</p>
-            <p>Om oss</p>
-            <p>Jobba på Lazango</p>
-        </div>
-        <div class="footerText">
-            <h2 class="footerRubrik">Socialt Ansvar</h2>
-            <p>Våra produkter</p>
-            <p>Våra leveranser</p>
-            <p>Vårt jobb för utsatta</p>
+            <h2>Det här är Lazango</h2>
+            <a href="https://sv.wikipedia.org/wiki/Smurfarna"><p>Vi på Lazango</p></a>
+            <a href="https://en.wikipedia.org/wiki/Why_did_the_chicken_cross_the_road%3F"><p>Om oss</p></a>
+            <a href="https://jobbnorge.se/lediga-jobb/undersk%C3%B6terska-sk%C3%B6tare-v%C3%A5rdbitr%C3%A4de"><p>Jobba på Lazango</p></a>
         </div>
 
         <div class="footerIcons">
-            <i class="fa-brands fa-twitter fa-2x"></i>
-            <i class="fa-brands fa-facebook-f fa-2x"></i>
-            <i class="fa-brands fa-instagram fa-2x"></i>
-            <i class="fab fa-snapchat fa-2x"></i>
+            <a href="https://twitter.com/PabloEscobarWW"><i class="fa-brands fa-twitter fa-2x"></i></a>
+            <a href="https://www.facebook.com/public/Pablo-Escobar"><i class="fa-brands fa-facebook-f fa-2x"></i></a>
+            <a href="https://www.instagram.com/explore/locations/270471668/pablo-escobar/"><i class="fa-brands fa-instagram fa-2x"></i></a>
+            <a href="https://accounts.snapchat.com/accounts/v2/login?continue=%2Faccounts%2Fsso%3Freferrer%3Dhttps%253A%252F%252Fweb.snapchat.com%252F%253Fref%253Dweb_nav_chat_icon%2526web_client_id%253D6c30f242-5899-43c1-a024-d92bf1f3212d%26client_id%3Dweb-calling-corp--prod"><i class="fab fa-snapchat fa-2x"></i></a>
         </div>
     </div>
-
     
 <script>
     document.addEventListener("DOMContentLoaded", function(event) { 
         loadSingle(value)
     });
 </script>
-</body>
+<script src="cart.js" onload="loadCart()"></script>
 
+</body>
 </html>

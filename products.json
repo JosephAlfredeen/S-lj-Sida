@@ -5,7 +5,7 @@
        "title": "Brown cargo pants",
        "brand": "Nordström",
        "description": "Pants are an article of clothing that extends from the waist to around the ankles and fits around each leg. Also known as trousers, pants are worn by people of all genders and ages. As opposed to a dress or a skirt, pants are divided down the middle and have openings for each leg.",
-       "price": "900",
+       "price": "90",
        "class": "Popular",
        "href":"singleProduct.html?id=1",
        "rating":5
@@ -16,7 +16,7 @@
        "title": "Beige Jacket",
        "brand": "H&M",
        "description":"A garment for the upper body usually having a front opening, collar, lapels, sleeves, and pockets. : something worn or fastened around the body but not for use as clothing.",
-       "price": "700",
+       "price": "70",
        "href":"singleProduct.html?id=2",
        "rating":3
     },
@@ -26,7 +26,7 @@
         "title": "College Jacket",
         "brand": "Gant",
         "description":"A garment for the upper body usually having a front opening, collar, lapels, sleeves, and pockets. : something worn or fastened around the body but not for use as clothing.",
-        "price": "1200",
+        "price": "120",
         "class": "Popular",
         "href":"singleProduct.html?id=3",
         "rating":4
@@ -37,7 +37,7 @@
         "title": "Fancy Shirt",
         "brand": "Gant",
         "description":"A garment for the upper body usually having a front opening, collar, lapels, sleeves, and pockets. : something worn or fastened around the body but not for use as clothing.",
-        "price": "1000",
+        "price": "100",
         "href":"singleProduct.html?id=4",
         "rating":3
      },
@@ -47,7 +47,7 @@
         "title": "Linen Shirt",
         "brand": "Roseborn",
         "description":"A garment for the upper body usually having a front opening, collar, lapels, sleeves, and pockets. : something worn or fastened around the body but not for use as clothing.",
-        "price": "800",
+        "price": "80",
         "class": "Popular",
         "href":"singleProduct.html?id=5",
         "rating":5
@@ -58,7 +58,7 @@
         "title": "Pink Pants",
         "brand": "Nordström",
         "description":"A garment for the upper body usually having a front opening, collar, lapels, sleeves, and pockets. : something worn or fastened around the body but not for use as clothing.",
-        "price": "800",
+        "price": "80",
         "href":"singleProduct.html?id=6",
         "rating":4
      }
