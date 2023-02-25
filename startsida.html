@@ -7,6 +7,8 @@
     <title>Lazango</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <script src="script.js"></script>
+    <script src="cartJS.js"></script>
 </head>
 <body onload='loadAll([".productsPopular", ".productsNyheter", ".productsSommar"])'>
 
@@ -19,7 +21,7 @@
             <input id="searchBar" type="text" placeholder="Search..." onkeyup="searchOne()">
         </div>
 
-        <a href="startsida.html"><img id="logo" src="images/webshoppLogoNew.png"></img></a>
+        <a href="startsida.html"><img id="logo" src="images/webshoppLogoNew.png" alt="Lazango Logo"></a>
     </div>
 
 
@@ -27,10 +29,10 @@
     <div id="dropDown" style="visibility: hidden;">
         <div class="dropDownText">
             <p class="dropDownRubrik">Produkter</p>
-            <a id="dropDownTextP" href="allProducts.html"><p>Alla Produkter</p></a>
-            <a id="dropDownTextP" href="startsida.html#popular"><p>Populärast</p></a>
-            <a id="dropDownTextP" href="startsida.html#nyheter"><p>Nyheter</p></a>
-            <a id="dropDownTextP" href="startsida.html#sommar"><p>Sommar</p></a>
+            <a class="dropDownTextP" href="allProducts.html"><p>Alla Produkter</p></a>
+            <a class="dropDownTextP" href="startsida.html#popular"><p>Populärast</p></a>
+            <a class="dropDownTextP" href="startsida.html#nyheter"><p>Nyheter</p></a>
+            <a class="dropDownTextP" href="startsida.html#sommar"><p>Sommar</p></a>
 
         </div>
     </div>
@@ -86,6 +88,4 @@
 
 
 </body>
-<script src="script.js"></script>
-<script src="cartJS.js"></script>
 </html>

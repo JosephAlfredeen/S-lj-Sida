@@ -152,14 +152,13 @@ a, a:link, a:visited, a:focus, a:hover, a:active{
     text-decoration: underline;
 }
 
-#dropDownTextP{
+.dropDownTextP{
     color: aliceblue;
     text-decoration: none;
 }
-#dropDownTextP:hover{
-    text-decoration: underline;
-    text-decoration-color: aliceblue;
+.dropDownTextP:hover{
     cursor: pointer;
+    text-decoration: underline;
 }
 
 
