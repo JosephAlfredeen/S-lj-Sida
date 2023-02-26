@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <script src="script.js"></script>
-    <script> const params = new Proxy(new URLSearchParams(window.location.search), {
-        get: (searchParams, prop) => searchParams.get(prop),
+    <script> const params = new Proxy(new URLSearchParams(window.location.search), {        //Script för att hämta vilket id sidans url har.
+        get: (searchParams, prop) => searchParams.get(prop),                                //Denna url används sedan för att hämta rätt produkt ur json filen.
       });
       // Get the value of "some_key" in eg "https://example.com/?some_key=some_value"
       let value = params.id; // "some_value"
@@ -62,7 +62,7 @@
         </div>
     </div>
 
-    <div id="singleProduct"></div>
+        <div id="singleProduct"></div>      <!--Destination för funktion som laddar upp en produkt från json filen-->
     
     <div class="footer">
         <div class="footerText">
@@ -91,9 +91,9 @@
         </div>
     </div>
     
-<script>
-    document.addEventListener("DOMContentLoaded", function(event) { 
-        loadSingle(value)
+<script> 
+    document.addEventListener("DOMContentLoaded", function(event) {   // Väntar på att dokumentet ska laddas klart innan fden kör nästa rad.
+        loadSingle(value)                                             // Kör funktion för att ladda up en specifik produkt.
     });
 </script>
 <script src="cart.js" onload="loadCart()"></script>

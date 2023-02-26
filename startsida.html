@@ -7,72 +7,68 @@
     <title>Lazango</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
-    <script src="script.js"></script>
+    <script src="script.js"></script>       <!--Länkar till javascript fil-->
 </head>
-<body onload='loadAll([".productsPopular", ".productsNyheter", ".productsSommar"])'>
+<body onload='loadAll([".productsPopular", ".productsNyheter", ".productsSommar"])'>    <!--Kör funktioner för att hämta produkter från json-->
 
 
-    <div class="header">
+    <div class="header">    <!--Header med logo, sökfunktion och navigerings meny-->
         <i id="bars" class="fa-solid fa-bars fa-3x" onclick="showDropDown()"></i>
 
         <div class="searchContainer">
             <i id="magnifyingGlass" class="fa-solid fa-magnifying-glass"></i>
-            <input id="searchBar" type="text" placeholder="Search..." onkeyup="searchOne()">
+            <input id="searchBar" type="text" placeholder="Search..." onkeyup="searchOne()">    <!--Sökfunktion-->
         </div>
 
         <a href="startsida.html"><img id="logo" src="images/webshoppLogoNew.png" alt="Lazango Logo"></a>
 
 
 
-        <div class = "cart">
-            <button type = "button" id = "cart-btn">
-              <i class = "fas fa-shopping-cart"></i>
-              <span id = "cart-count-info">0</span>
+        <div class = "cart">    <!--Kundvagn-->
+            <button type = "button" id = "cart-btn">    <!--Knapp för att få fram kundvagnen-->
+                <i class = "fas fa-shopping-cart"></i>
+                <span id = "cart-count-info">0</span>
             </button>
 
-        <div class = "cart-container">
-            <p>Your Items</p>
-            <div class = "cart-list">
-            </div>
+            <div class = "cart-container">  <!--Div för att hålla alla produkter som läggs till i kundvagnen-->
+                <p>Your Items</p>
+                <div class = "cart-list"></div> <!--Distanation för funktion som sparar produkter-->
 
-            <div class = "cart-total">
-              <h3>Total: $</h3>
-              <span id = "cart-total-value"></span>
+                <div class = "cart-total">
+                    <h3>Total: $</h3>
+                    <span id = "cart-total-value"></span>   <!--Destination för funktion som adderar summan av alla produkter-->
+                </div>
+                <div class="checkoutContainer"><button id="checkout" type="button">Checkout</button></div>
             </div>
-          </div>
         </div>
-
-
-
     </div>
 
 
 
-    <div id="dropDown" style="visibility: hidden;">
+    <div id="dropDown" style="visibility: hidden;">     <!--Navbar-->
         <div class="dropDownText">
             <p class="dropDownRubrik">Produkter</p>
             <a class="dropDownTextP" href="allProducts.html"><p>Alla Produkter</p></a>
             <a class="dropDownTextP" href="startsida.html#popular"><p>Populärast</p></a>
             <a class="dropDownTextP" href="startsida.html#nyheter"><p>Nyheter</p></a>
             <a class="dropDownTextP" href="startsida.html#sommar"><p>Sommar</p></a>
-
         </div>
     </div>
 
-    <div class="mainBack">
+    <div class="mainBack">      <!--Container med bilder -->
         <div class="mainContainer">
-            <a href=""><img src="images/webshoppMainLeft.jpg" alt="Image of a man"></a>
-            <div class="buttonContainer">
-                <a href="#popular" class="mainButton"><div >Populärast</div></a>
-                <a href="#nyheter" class="mainButton"><div >Nyheter</div></a>
-                <a href="#sommar" class="mainButton"><div >Sommar</div></a>
-            </div>
-            <a href=""><img src="images/webshoppMainRight.jpeg" alt="Image from Peaky Blinders"></a>
-       </div>
+            <img src="images/webshoppMainLeft.jpg" alt="Image of a man">
+                <div class="buttonContainer">
+                    <a href="#popular" class="mainButton"><div >Populärast</div></a>    <!--Knappar för att komma längre ner på sidan-->
+                    <a href="#nyheter" class="mainButton"><div >Nyheter</div></a>
+                    <a href="#sommar" class="mainButton"><div >Sommar</div></a>
+                </div>
+            <img src="images/webshoppMainRight.jpeg" alt="Image from Peaky Blinders">
+        </div>
     </div>
 
     <p id="popular" class="popularText">Mest Populära Varor</p>
-    <div class="productsPopular products"></div>
+    <div class="productsPopular products"></div>    <!--Destination för produkter att placeras med javascript funktion-->
 
     <p id="nyheter" class="popularText">Nyheter</p>
     <div class="productsNyheter products"></div>
@@ -81,7 +77,7 @@
     <div class="productsSommar products"></div>
 
 
-    <div class="footer">
+    <div class="footer">    <!--Footer bakgrund och container för informaton om sidan-->
         <div class="footerText">
             <h2>Kundservice</h2>
             <p>076-123-45-67</p>
@@ -108,7 +104,8 @@
         </div>
     </div>
 
-<script src="cart.js" onload="loadCart()"></script>
+<script src="cart.js" onload="loadCart()"></script>     <!--Kallar på funktion för att hämta allt innehåll som sparats i korgen.
+                                                            Viktigt ifall man går tillbaka eller går till en annan produkt.-->
 
 </body>
 </html>

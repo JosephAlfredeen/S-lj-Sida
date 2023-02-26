@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <script src="script.js"></script>
 </head>
-<body onload="loadAll(['.productsPopular'])">
+<body onload="loadAll(['.productsPopular'])">   <!--Kör funktion för att hämta produkter från json fil-->
 
     <div class="header">
         <i id="bars" class="fa-solid fa-bars fa-3x" onclick="showDropDown()"></i>
@@ -26,23 +26,21 @@
 
         <div class = "cart">
             <button type = "button" id = "cart-btn">
-              <i class = "fas fa-shopping-cart"></i>
-              <span id = "cart-count-info">0</span>
+            <i class = "fas fa-shopping-cart"></i>
+            <span id = "cart-count-info">0</span>
             </button>
 
         <div class = "cart-container">
-            <div class = "cart-list">
-            </div>
+            <p>Your Items</p>
+            <div class = "cart-list"></div>
 
             <div class = "cart-total">
-              <h3>Total: $</h3>
-              <span id = "cart-total-value"></span>
+                <h3>Total: $</h3>
+                <span id = "cart-total-value"></span>
             </div>
-          </div>
+            <div class="checkoutContainer"><button id="checkout" type="button">Checkout</button></div>
         </div>
-
-
-
+    </div>
     </div>
 
     <div id="dropDown" style="visibility: hidden;">
@@ -57,7 +55,8 @@
 
 
     <p class="popularText" id="allProductsText">Alla Våra Produkter</p>
-    <div class="productsPopular products"></div>
+    <div class="productsPopular products"></div>     <!--Destination för funktion som laddar upp produkter från json filen-->
+
 
 
     <div class="footer">

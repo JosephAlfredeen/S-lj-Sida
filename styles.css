@@ -1,4 +1,4 @@
-html{
+html{       /*För att alla scroll funktioner på sidan ska skrollas mjukt och inte hoppa direkt till destinationen*/
     scroll-behavior: smooth;
 }
 
@@ -13,29 +13,29 @@ img{
     border-radius: 10px;
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
 }
-a:hover{
+a:hover{        /*För att alla länkar på sidan ska bli större med en animation när man hovrar över dem*/
     transform: scale(1.05);
     transition: all 0.4s ease;
 }
-.product:hover{
+.product:hover{     /*För att alla produkter på sidan ska bli lite större ämn resterande länkar samt att de ska få en skugga bakom*/
     transform: scale(1.1);
     transition: all 0.4s ease;
     box-shadow: 3px 5px 1px 1px #2c2c2c;
 }
 
-a, a:link, a:visited, a:focus, a:hover, a:active{
+a, a:link, a:visited, a:focus, a:hover, a:active{       /*För att alla länkar ska ha samma färg som resten av texten*/
     color:aliceblue;
     text-decoration:none;
 }
 
 
 .header{
-    z-index: 9999;
+    z-index: 9999;      /*För att headern ska visas över allt annat*/
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
     justify-content: space-around;
-    position: fixed;
+    position: fixed;        /*För att headern ska förbli på samma plats även när man skrollar ner på sidan*/
 
     background-color:#7D3D22;
     height: 100px;
@@ -68,7 +68,7 @@ a, a:link, a:visited, a:focus, a:hover, a:active{
     font-size: 30px;
     border-radius: 5px;
 
-    cursor: pointer;
+    cursor: pointer;        /*Gör att man ser att det går att klicka på loggan när man hovrar över den*/
 }
 
 .searchContainer{
@@ -113,7 +113,7 @@ a, a:link, a:visited, a:focus, a:hover, a:active{
     min-width: 15%;
     height: fit-content;
     background-color: #7D3D22;
-    border-radius: 0 0 10px 0;
+    border-radius: 0 0 10px 0;      /*Så att endast ena hörnet rundas*/
 }
 
 .dropDownText{
@@ -155,7 +155,7 @@ a, a:link, a:visited, a:focus, a:hover, a:active{
 
     width: 100%;
 }
-.mainContainer img{
+.mainContainer img{     /*Gör att bilderna förminskas när skärmstorleken minskar*/
     max-width: 100%;
 }
 
@@ -191,7 +191,7 @@ a, a:link, a:visited, a:focus, a:hover, a:active{
     cursor: pointer;
     text-decoration: none;
 
-    scroll-margin-top: 400px;
+    scroll-margin-top: 400px;       /*Får länken man trycker på att scrollas med utrymme från toppen. Används eftersom att man vill se titeln på bilderna.*/
 }
 
 .mainButton:hover{
@@ -290,14 +290,14 @@ a, a:link, a:visited, a:focus, a:hover, a:active{
     margin-right: 20%;
 }
 .productInfoContainer img{
-    max-width: 320px;
+    max-width: 320px;       /*Får bilderna att minskas när skärmstorleken minskar*/
     max-height: 320px;
 }
 .productContainer input{
     width: 30px;
     height: 35px;
     border-radius: 5px;
-    border: none;
+    border: none;       /*Tar bort kanterna från inputen*/
     text-align: center;
 }
 .prodcutTextContainer div{
@@ -361,7 +361,7 @@ a, a:link, a:visited, a:focus, a:hover, a:active{
 
 
 
-.products, .products1, .products2, .products3{
+.products{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -410,32 +410,25 @@ a, a:link, a:visited, a:focus, a:hover, a:active{
 
 
 
-/* Shopping Cart */
+/* Shopping cart */
 .cart{
-    justify-self: flex-end;
     padding-right: 8px;
 }
 #cart-btn{
     border: none;
     font-size: 1.5rem;
-    background: none;
-    color: var(--granite-gray);
+    background: none;       /*Tar bort bakgrunden från knappen*/
     position: relative;
+    color: aliceblue;
+    display: flex;
+    flex-direction: row;
 }
 #cart-count-info{
-    position: absolute;
-    top: -12px;
-    right: -8px;
-    background: var(--fire-bush);
-    color: #fff;
+    color: aliceblue;
     font-size: 1rem;
     width: 25px;
     height: 25px;
     border-radius: 50%;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -443,8 +436,8 @@ a, a:link, a:visited, a:focus, a:hover, a:active{
 }
 .cart-container{
     position: absolute;
-    overflow-y: scroll;
-    background: #fff;
+    overflow-y: scroll;     /*Ifall content i diven blir längre än diven adderas en scrollbar*/
+    background: aliceblue;
     width: 20%;
     color: black;
     max-height: 600px;
@@ -452,16 +445,16 @@ a, a:link, a:visited, a:focus, a:hover, a:active{
     left: 0;
     right: 0;
     box-shadow: 0 3px 8px -2px rgba(0, 0, 0, 0.21);
-    display: none;
+    display: none;      /*Visas inte när man laddar sidan*/
 }
 /* js related class */
 .show-cart-container{
-    display: block;
+    display: block;     /*När en script körs visas kundkorgen*/
 }
-/*  */
+
 .cart-item{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: grid;      /*Allt innehåll hamnar på en grid*/
+    grid-template-columns: repeat(3, 1fr);      /*Griden har två rader och repteras för varje ny vara som läggs in*/
     column-gap: 0.5rem;
     align-items: center;
     position: relative;
@@ -470,25 +463,17 @@ a, a:link, a:visited, a:focus, a:hover, a:active{
     border-bottom: 1px solid rgba(0, 0, 0, 0.21);
 }
 .cart-item:last-child{
-    border-bottom: none;
+    border-bottom: none;        /*Den sista varan som läggs in har ingen bottom border*/
 }
 .cart-item-del-btn{
-    position: absolute;
-    right: 15px;
-    top: 15px;
     padding: 0.05rem 0.45rem;
     font-size: 1.4rem;
-    background: var(--fire-bush);
     border: none;
-    color: #fff;
+    color: aliceblue;
     border-radius: 5px;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    -ms-border-radius: 5px;
-    -o-border-radius: 5px;
 }
 .cart-item img{
-    width: 80px;
+    max-width: 80px;
 }
 .cart-item-info{
     text-align: center;
@@ -500,9 +485,6 @@ a, a:link, a:visited, a:focus, a:hover, a:active{
     padding: 1rem;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    background: var(--fire-bush);
-    color: #fff;
 }
 .cart-total h3{
     margin-right: 0.2rem;
@@ -515,25 +497,20 @@ a, a:link, a:visited, a:focus, a:hover, a:active{
 
 
 .add-to-cart-btn{
-    top: 50%;
-    right: 50%;
-    left: 50%;
     border: none;
     padding: 0.75rem 1.2rem;
     font-size: 1.05rem;
     background-color: aliceblue;
     color: black;
 }
-.product:hover .add-to-cart-btn{
-    opacity: 1;
-}
-.add-to-cart-btn:hover{
+.add-to-cart-btn:hover{     /*Ändrar utseende på kanppen när man hovrar över den*/
     background-color: #23272a;
     color: #D67622;
     cursor: pointer;
 }
 .cart-item-del-btn{
     color: black;
+    background: none;
 }
 .cart p{
     font-size: 25px;
@@ -568,7 +545,7 @@ a, a:link, a:visited, a:focus, a:hover, a:active{
 
 
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1000px) {     /*Ifall skärmen är mindre än 1000px blir dropdown större då den blev för liten tidigare. Samma händer med cart container*/
     #dropDown{
         width: 25%;
         margin-left: 75%;
@@ -579,23 +556,18 @@ a, a:link, a:visited, a:focus, a:hover, a:active{
     }
 }
 
-@media screen and (max-width: 600px) {
-    .productInfoContainer img{
-        width: 120px;
-        height: 120px;
+@media screen and (max-width: 600px) {      /*När skärmen är mindre än 600px visas produktbilden ovanför texten då den tidigare blev för liten.*/
+    .productInfoContainer{
+        flex-direction: column;
     }
 }
-@media screen and (max-width: 400px) {
-    .productInfoContainer img{
-        width: 90px;
-        height: 90px;
-    }
+@media screen and (max-width: 400px) {      /*När skärmen är mindre än 400px blir cart conatiners bredd 100% av skärmen så att den blir lättare att se.*/
     .cart-container{
         width: 100%;
     }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 500px) {      /*När skärmen är mindre än 500px får footern flex-wrap:wrap; eftersom att de tidigare trycks ihop*/
     .footer{
         flex-wrap: wrap;
         gap: 10%;

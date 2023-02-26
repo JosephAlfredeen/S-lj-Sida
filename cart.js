@@ -1,5 +1,5 @@
 
-// variables and constants
+//Sätter variabler till classser och ID i html dokumentet så att de går att ha som destination för funktioner.
 const cartContainer = document.querySelector('.cart-container');
 const cartList = document.querySelector('.cart-list');
 const cartTotalValue = document.getElementById('cart-total-value');
@@ -7,43 +7,36 @@ const cartCountInfo = document.getElementById('cart-count-info');
 let cartItemID = 1;
 
 
-//eventListeners();
-
-// all event listeners
 function eventListeners(){
-    window.addEventListener('startsida.html', () => {
-        loadCart();
-    });
 
-    // show/hide cart container
+    // Visar eller döljer kundvagnen genom att lägga till klassen med display:block;
     document.getElementById('cart-btn').addEventListener('click', () => {
         cartContainer.classList.toggle('show-cart-container');
     });
 
-    // add to cart
+    // Väntar på att man trycker på knappen för att lägga till en produkt. Då körs funktionen purchaseProduct.
     productList.addEventListener('click', purchaseProduct);
 
-    // delete from cart
+    // Väntar på att man trycker på knappen för att ta bort en produkt. Då körs funktionen deleteProduct.
     cartList.addEventListener('click', deleteProduct);
 
-    // checkout
+    // Väntar på att man trycker på knappen för checkout. Då körs funktionen checkoutFunc.
     checkout.addEventListener('click', checkoutFunc)
 }
 
-//
+// Ger en notis till användaren att dess beställning blivit mottagen.
 function checkoutFunc(){
     alert("Your order has been recieved! Thank you come again.");
 }
 
-// update cart info
+// Uppdaterar informationen i kundvagnen genom att sätta html klasserna och ID till variabler som uppdaterats i en annan funktion.
 function updateCartInfo(){
     let cartInfo = findCartInfo();
     cartCountInfo.textContent = cartInfo.productCount;
     cartTotalValue.textContent = cartInfo.total;
 }
 
-
-// purchase product
+// Ifall man trycker på knappen för att lägga till en produkt kommer variabeln product ihåg vilken produkt de tvar som lades till. Sedan körs funktionen getProductInfo
 function purchaseProduct(e){
     if(e.target.classList.contains('add-to-cart-btn')){
         let product = e.target.parentElement.parentElement;
@@ -51,7 +44,8 @@ function purchaseProduct(e){
     }
 }
 
-// get product info after add to cart button click
+// Informationen om produkten sparas i variablen productInfo. Detta görs genom att ta informationen som finns i html klasserna i produkten.
+// Sedan körs funktionerna addToCartList och saveProductInStorage
 function getProductInfo(product){
     let productInfo = {
         id: cartItemID,
@@ -65,7 +59,7 @@ function getProductInfo(product){
     saveProductInStorage(productInfo);
 }
 
-// add the selected product to the cart list
+// Skapar en div där produkten läggs till med hjälp av informationen sparad i productInfo.
 function addToCartList(product){
     const cartItem = document.createElement('div');
     cartItem.classList.add('cart-item');
@@ -85,7 +79,7 @@ function addToCartList(product){
     cartList.appendChild(cartItem);
 }
 
-// save the product in the local storage
+// Lägger till produkten i en variabel products som sparar alla produkter man lagt till.
 function saveProductInStorage(item){
     let products = getProductFromStorage();
     products.push(item);
@@ -93,35 +87,32 @@ function saveProductInStorage(item){
     updateCartInfo();
 }
 
-// get all the products info if there is any in the local storage
+// Hämtar alla information från products.
 function getProductFromStorage(){
     return localStorage.getItem('products') ? JSON.parse(localStorage.getItem('products')) : [];
-    // returns empty array if there isn't any product info
 }
 
-// load carts product
+// Lägger till alla produkter som finns i products i kundvagnen.
 function loadCart(){
     let products = getProductFromStorage();
     if(products.length < 1){
-        cartItemID = 1; // if there is no any product in the local storage
+        cartItemID = 1;
     } else {
         cartItemID = products[products.length - 1].id;
         cartItemID++;
-        // else get the id of the last product and increase it by 1
     }
     products.forEach(product => addToCartList(product));
 
-    // calculate and update UI of cart info 
     updateCartInfo();
 }
 
-// calculate total price of the cart and other info
+// Räknar ut totala priset av alla varor i kundvagnen samt hur många varor som finnsi korgen.
 function findCartInfo(){
     let products = getProductFromStorage();
     let total = products.reduce((acc, product) => {
-        let price = parseFloat(product.price.substr(1)); // removing dollar sign
+        let price = parseFloat(product.price.substr(1));
         return acc += price;
-    }, 0); // adding all the prices
+    }, 0);
 
     return{
         total: total.toFixed(2),
@@ -129,7 +120,7 @@ function findCartInfo(){
     }
 }
 
-// delete product from cart list and local storage
+// Tar bort en produkt ur kundvagnslistan
 function deleteProduct(e){
     let cartItem;
     if(e.target.tagName === "BUTTON"){
@@ -144,6 +135,6 @@ function deleteProduct(e){
     let updatedProducts = products.filter(product => {
         return product.id !== parseInt(cartItem.dataset.id);
     });
-    localStorage.setItem('products', JSON.stringify(updatedProducts)); // updating the product list after the deletion
+    localStorage.setItem('products', JSON.stringify(updatedProducts));
     updateCartInfo();
 }

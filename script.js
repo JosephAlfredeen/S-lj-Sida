@@ -1,18 +1,21 @@
+// Sätter productList till en global variabel så att den går att använda utanför funktionen
 var productList;
 
+// Funktion som väntar på att html filen ska laddas klart innan den kör resterande funktioner.
 function loadAll(classes){
     const xhr = new XMLHttpRequest();
     xhr.open('GET', 'products.json', true);
     
-    xhr.onload = () => {
+    xhr.onload = () => {        //När html filen laddats klart körs funktioner för att ladda upp produkter
       products = JSON.parse(xhr.responseText);
       showAll(classes)
-      productList = document.querySelector('.productList');
-      eventListeners(); 
+      productList = document.querySelector('.productList');     // När alla produkter laddats upp sätts variabeln.
+      eventListeners();
     };
     xhr.send();
 }
 
+// Laddar upp produkter från json filen genom att göra nya divar med html kod.
 function showAll(classes){
     let output = "";
     
@@ -44,11 +47,11 @@ function showAll(classes){
             `;
          };
          for (c in classes){
-            document.querySelector(classes[c]).innerHTML = output;
+            document.querySelector(classes[c]).innerHTML = output;      //Lägger produkterna i classen som bestämms när funktionen kallas.
          }
 }
 
-
+//      Fungerar på samma sätt som funktionen ovan.
 function loadSingle(id){
     const xhr = new XMLHttpRequest();
     xhr.open('GET', 'products.json', true);
@@ -104,7 +107,7 @@ function showProduct(products, id){
 
 
 
-
+//      Visar dropDown. Ifall den är gömd blri den synlig och tvärtom.
 function showDropDown() {
     var node = document.getElementById('dropDown');
     if (node.style.visibility=='visible') {
@@ -114,6 +117,7 @@ function showDropDown() {
         node.style.visibility = 'visible'
 }
 
+//      Sök funktion. Kollar ifall det man skrivit finns inom diven med klassnamnet product.
 function searchOne() {
 let input = document.getElementById('searchBar').value
 input=input.toLowerCase();
