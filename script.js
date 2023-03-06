@@ -72,6 +72,11 @@ function showProduct(products, id){
     
          for(let item of products){
             if (item.id == id){
+
+                let stars = "";
+                for (let i = 0; i < item.rating; i++) {
+                    stars += '<i class="fa-solid fa-star"></i>';
+                }
                 output += `
              
                     <div class="productContainer productList">
@@ -80,7 +85,9 @@ function showProduct(products, id){
                             <div class="productTextContainer">
                                 <p class="title">${item.title}</p>
                                 <p class="brand">${item.brand}</p>
-                                    <span id="star"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span>
+                                <div id="star">
+                                ${stars}
+                                </div>
 
                                 <p class="price" id="singlePrice">
                                     <span>${item.price}</span>
