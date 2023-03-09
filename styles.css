@@ -157,6 +157,7 @@ a, a:link, a:visited, a:focus, a:hover, a:active{       /*För att alla länkar 
 }
 .mainContainer img{     /*Gör att bilderna förminskas när skärmstorleken minskar*/
     max-width: 100%;
+    height: auto;
 }
 
 .imageDiv{
@@ -544,6 +545,14 @@ a, a:link, a:visited, a:focus, a:hover, a:active{       /*För att alla länkar 
 }
 
 
+@media screen and (max-width: 1200px) {
+    .mainContainer img{
+        display: none;
+    }    
+    .mainButton{
+        margin-bottom: 30px;
+    }
+}
 
 @media screen and (max-width: 1000px) {     /*Ifall skärmen är mindre än 1000px blir dropdown större då den blev för liten tidigare. Samma händer med cart container*/
     #dropDown{
